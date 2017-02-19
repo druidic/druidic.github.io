@@ -14,6 +14,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 a {
@@ -21,18 +24,24 @@ a {
 }
 
 nav {
-  background-color: rgba(24,24,24,0.98);;
+  background-color: rgba(16,16,16,0.95);;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   line-height: 60px;
-  padding-left: 12px;
   border-bottom: 1px solid #55555a;
   font-size: 24px;
   font-weight: 200;
   letter-spacing: 0.05em;
+}
+
+nav > div {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
 }
 
 .content {
@@ -41,7 +50,7 @@ nav {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(24,24,24,0.95);
+  background-color: rgba(16,16,16,0.90);
   font-weight: 400;
   color: #d0d0d0;
 }
@@ -79,7 +88,7 @@ p {
   line-height: 140%;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
-  text-shadow: 0 1px 0 black;
+  text-shadow: 0 1px 1px black;
 }
 
   </style>
@@ -87,7 +96,9 @@ p {
 <body>
 
 <nav>
-  <a href="/">Druidic</a>
+  <div>
+    <a href="/">Druidic</a>
+  </div>
 </nav>
 
 <div class="content">
