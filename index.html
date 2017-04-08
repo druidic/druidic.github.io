@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Druidic Technologies</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet">
   <style>
 
 * {
@@ -14,17 +15,13 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5b/Grib_skov.jpg');
   background-attachment: fixed;
   background-size: cover;
-}
-
-a {
-  text-decoration: none;
+  background-color: #181818;
 }
 
 nav {
-  background-color: rgba(16,16,16,0.95);;
+  background-color: black;
   position: absolute;
   top: 0;
   left: 0;
@@ -38,10 +35,10 @@ nav {
 }
 
 nav > div {
-  max-width: 900px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 30px;
+  padding-left: 54px;
 }
 
 .content {
@@ -50,27 +47,33 @@ nav > div {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(16,16,16,0.90);
   font-weight: 400;
-  color: #d0d0d0;
+  /*color: #d0d0d0;*/
+  color: #c8c8c8;
   overflow: auto;
 }
 
 .section {
-  border-bottom: 1px solid #55555a;
-  max-width: 900px;
-  padding: 30px;
+  border-bottom: 1px solid #404046;
+  max-width: 700px;
+  padding: 30px 60px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(16,16,16,0.50);
 }
 
 nav a {
   text-transform: uppercase;
-  text-decoration: none;
+  color: #30ffa5;
+  border-bottom: 0;
 }
 
 a {
+  color: #9bffd3;
+  text-decoration: none;
+  border-bottom: 1px solid #777;
+}
+
+a:hover, a:active {
   color: #30ffa5;
 }
 
@@ -81,22 +84,66 @@ h1, h2 {
   text-shadow: 0 2px 0 black;
   margin-top: 1em;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 strong {
   color: #fff;
   font-weight: 400;
   letter-spacing: 0.05em;
+  color: #fff;
 }
 
-p {
+p, li {
   font-weight: 300;
-  font-size: 18px;
-  letter-spacing: 0.02em;
-  line-height: 140%;
+  font-family: 'Roboto Slab';
+  font-size: 14px;
+  word-spacing: 0.02em;
+  line-height: 150%;
   margin-top: 0.75em;
   margin-bottom: 0.75em;
-  text-shadow: 0 1px 1px black;
+  text-shadow: 0 1px 2px black, 0 1px 0 black;
+  text-align: justify;
+}
+
+li {
+  margin-left: 2em;
+}
+
+.center {
+  text-align: center;
+}
+
+p.big {
+  font-size: 16px;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #30ffa5;
+  color: #222;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: 0;
+  box-shadow: 0 3px 0 #4d7a65;
+  font-family: 'Roboto Slab';
+  text-shadow: none;
+  transition: background-color 0.2s, transform 0.07s, box-shadow 0.07s;
+}
+
+a.cta:hover, a.cta:active {
+  color: #222;
+  background-color: #7fffc7;
+}
+
+a.cta:active {
+  box-shadow: none;
+  transform: translate(0, 3px);
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
 }
 
   </style>
@@ -111,53 +158,40 @@ p {
 
 <div class="content">
   <div class="section">
-    <h2>Technology that works for <em>you</em></h2>
+    <h2>Meet the Grove.</h2>
 
-    <p>Druidic is a new kind of technology company. Actually, let's be honest, it's not really a company. It's just <a href="https://github.com/benchristel">me</a>. And I'm not interested in taking your money. I have a day job.</p>
+    <p class="center big">The Grove is <strong>a personal computer, simulated inside your web browser</strong>. Optimized for writers, coders, and people who love computers from the &lsquo;80s.</p>
 
-    <p>You know how apps and websites always seem to be trying to distract you, upsell you, or make you keep coming back just so they can show you more ads? Druidic doesn't do that. We have one goal, and one only: <strong>make beautiful, useful things.</strong></p>
+    <div class="center">
+      <a class="cta" href="./test-drive-a-grove">Try it out.</a>
+    </div>
   </div>
 
   <div class="section">
-    <h2>The computer that runs in your web browser</h2>
+    <h2>It does what your web browser doesn't.</h2>
 
-    <p>The <a href="./grove">Grove</a> is a <strong>virtual personal computer</strong>—complete with an operating system, persistent file storage, and apps—that runs in web browsers like Chrome and Firefox.</p>
+    <p>Whether it's Firefox, Chrome, or Safari, you do practically everything inside a web browser these days. But there are some things that web browsers aren't good at yet. <strong>Here's what the Grove can do</strong> that's missing from your current web experience:</p>
 
-    <p>Say <em>what</em>? But it really works. You're using a web browser right now, so trying it out is as easy as <a href="./try-moss">clicking this link</a>.</p>
-
-    <p>Did you try it? Cool. You now have a unified computing environment that fits on a thumb drive, that you can carry around between physical machines and run anywhere, that will outlive operating system upgrades and hardware failures and the caprices of app developers. You can use it without a mouse. You can use it on a tiny screen. You can customize it to your heart's content. No third parties will ever intrude to mess it up, or mine your data to show you ads. You'd have to do extra work to <em>avoid</em> making backup copies. This stupid little pretend machine will be with you till the day you die. Unless you delete it. Which is also easy.</p>
-
-    <p>Oh, do you know how to program in JavaScript?</p>
-    <p>Want to learn?</p>
-    <p>Programming on the Grove is one of the easiest ways to learn how to code. Unlike most tutorial environments, its capabilities keep pace with yours. It will take you from writing your first line of code to making full-fledged web applications.</p>
+    <ul>
+      <li>Works without internet access</li>
+      <li>Saves files locally on your computer, where they're safe from data breaches</li>
+      <li>Only updates when <em>you</em> tell it to.</li>
+      <li>Provides a simple yet powerful suite of programming tools</li>
+    </ul>
   </div>
 
   <div class="section">
-    <h2>Human-scaled Technology</h2>
+    <h2>You <em>can</em> take it with you.</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      <strong>commodo consequat</strong>.</p>
-    <p>Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu <strong>fugiat nulla pariatur</strong>. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <p>Your entire Grove system is stored in a single file on your hard drive. And because it only needs a web browser to run, you can take it anywhere: Mac, Windows, Linux, or even Chromebook. And it works <strong>exactly the same on every single platform</strong>. We've even made an effort to avoid keyboard shortcuts that could differ across platforms, so the muscle memory you build on one system will transfer effortlessly to the next.</p>
+
+    <p>This means you can migrate between systems at will. Did one computer manufacturer or OS vendor do something you don't like? You can change platforms and never look back. They have no power over you. <strong>You're free.</strong></p>
   </div>
 
   <div class="section">
-    <h2>Write JavaScript Anywhere</h2>
+    <h2>Exclusively Yours</h2>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-  </div>
-
-  <div class="fine-print">
+    <p>The Grove is not beholden to any company. It will never show you ads or pester you about updates. You won't get in trouble for reverse-engineering or modifying it, either. It is perhaps the only computer system you'll ever own that's really, truly yours.</p>
   </div>
 </div>
 
