@@ -10,6 +10,32 @@ read on!
 
 === Why?
 
+Our  lives  are increasingly filled with software.
+Much of the software we rely on is overcomplicated and buggy
+because it's not designed with the user's needs first.
+Companies want you to live on the bleeding edge of technology
+so they can sell you more stuff, and to this end
+
+Sometimes this is because companies are competing to have
+the most features in their product, irrespective of what
+their users actually need. Sometimes ad-supported software
+is specifically designed to distract, divert, or addict
+you, because the more time you spend using it the more
+revenue it brings in. Sometimes, products are optimized
+for being pleasant to use in the store, not for actual day-to-day
+use.
+
+
+
+1. A lot of computer technology isn't designed to benefit users
+  a. Software bloat
+  b. Moral hazard of advertising
+  c. Overpromises - works under ideal conditions (i.e. in the store)
+2. Users can't opt-out of changes because old software
+   and hardware stop being available.
+3. The Grove lets you opt-in to a world of user-centered, permanent software
+   -- software that stays simple and always works.
+
 Our  lives  are increasingly filled with software--software that
 always seems a little bit teetery, like it's just barely hanging
 together.  Bugs,  errors, and confusing interfaces are the norm.
@@ -251,7 +277,9 @@ var lines = []
 var output = []
 var kHeld = false
 var jHeld = false
-var viewportHeight = 30
+var viewportHeight = 28
+var _60_SPACES = "                              "
+               + "                              "
 function main(event, data) {
 
 
@@ -272,7 +300,7 @@ function main(event, data) {
   if (event.type === 'startup') {
     var ps = paragraphs(homePage(data))
     var justified = ps.map(function(p) {
-      return justify(p, 64)
+      return justify(p, 60)
     })
 
     lines = justified.reduce(function(result, next) {
@@ -301,16 +329,15 @@ function main(event, data) {
   }
 
   output =
-   [ LineBuffer(
-    '=====================[ druidic.github.io ]======================',
-    {fg: 'white', bg: 'blue'})
+   [ '╔════════════════════[ druidic.github.io ]═════════════════════╗'
+   , '║                                                              ║'
    ]
-   .concat(lines.slice(lineOffset, lineOffset + viewportHeight))
+   .concat(lines.slice(lineOffset, lineOffset + viewportHeight).map(function(line) {
+      return '║ ' + (line + _60_SPACES).slice(0, 60) + ' ║'
+    }))
    .concat([
-      LineBuffer(
-       '                 Use the J and K keys to scroll                 ',
-       {fg: 'white', bg: 'blue'}
-      )
+     '║                                                              ║',
+     '╚═════════ * * * Use the J and K keys to scroll * * * ═════════╝'
     ])
 
   return output
