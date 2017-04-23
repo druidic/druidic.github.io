@@ -281,7 +281,7 @@ var viewportHeight = 28
 var _60_SPACES = "                              "
                + "                              "
 function main(event, data) {
-
+  var updatedRecords = {}
 
   if (event.type === 'clock') {
     if (!kHeld && !jHeld) {
@@ -306,6 +306,8 @@ function main(event, data) {
     lines = justified.reduce(function(result, next) {
       return result.concat(['']).concat(next)
     })
+
+    updatedRecords.doNotWarnAboutUnsavedChanges = 'exists'
   }
 
   if (event.type === 'keyDown') {
@@ -340,7 +342,10 @@ function main(event, data) {
      '╚═════════ * * * Use the J and K keys to scroll * * * ═════════╝'
     ])
 
-  return output
+  return {
+    screen: output,
+    records: updatedRecords
+  }
 }
 
 // =============================================================
