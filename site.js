@@ -1,66 +1,187 @@
 /*
 ===== DATA BEGIN ===============================================
-Welcome to the homepage of Druidic Technologies, creators of the
-Grove--the world's first and squarest virtual home computer.
-
-If you already know why you're here, you can hit the `G` key
-on your keyboard to get your very own Grove computer. Otherwise,
-read on!
+%%homepage
+                     druidic.github.io
 
 
-=== Why?
+      Welcome to the homepage of Druidic Technologies,
+   creators of the Grove--the world's first and squarest
+                   virtual home computer.
 
-         "The number of transitors on a chip
-          (and thus, the power of computers)
-          doubles every eighteen months"
-                               --Moore's law
+The Grove gives you a way to perform common computing tasks
+using exactly the same interface on any system -- Mac OS,
+Windows, Linux, or Chromebook. It doesn't need an Internet
+connection.
 
-         "The speed of software halves every
-          eighteen months"
-                               --Gates' Law
+  Use the number keys to select an option:
 
-If you're like us, computers frustrate you.
+  [1]: Download a Grove computer
+  [2]: Learn more about the Grove's design philosophy
 
-You know, intellectually, that modern computers are orders
-of magnitude more powerful than the computers of two decades
-ago. And yet, it seems like so little progress has been
-made--computers are still slow, still buggy, still have
-compatibility issues and software that won't install
-properly. You wish things would just WORK. How hard could
-that really be?
+%%learnMore
 
-I'm painting with a very broad brush here, but the reason
-we're in this mess is that histor-
-ically, whenever something didn't work quite right, the answer from
-software companies and software developers has been MORE
-SOFTWARE. And who can blame them? That's what they get paid
-for. But over the years, this has created a teetering
-stack of tools, apps, and platforms. 99.9% of the time,
-it all basically works. One time in a thousand, things fail
-in totally unexpected, bizarre, stupid ways, and the only
-way to understand what went wrong is to understand
-EVERYTHING in the stack, because everything is connected
-to everything else.
+          Enter the Grove: Our Design Philosophy
 
-Rather than
-live on the bleeding edge of software bloat, we want to
-approach software with a mentality of sufficiency--the idea
-that a limited feature set can adequately serve almost
-everyone's needs. It turns out that if you approach software
-development from this perspective, a lot of the problems
-simply go away. Since we're not straining the hardware to
-its limits with extraneous features, we can eschew
-optimizations in our code that give bugs places to hide.
-Since we don't add extra features, we don't need to force
-people to upgrade their software. Since the hardware
-requirements for our software are minimal, our applications
-run as well on a cheap netbook as on a professional PC.
+
+Viewed against the backdrop of modern software and computer
+technology the Grove's minimalist, retro design seems incon-
+gruous. We think it makes sense, though, given the goals the
+Grove aims to accomplish. In this article, I'll outline the
+design decisions we made and explain the reasoning under-
+lying them.
+
+The Grove's design goal is to minimize frustration. We
+believe that recent trends in computing have increased the
+amount of frustration -- the gap between what you think you
+should be able to do and what you actually can do -- that
+people experience when using computers. By defying those
+trends, we aim to provide a more reliable -- albeit less
+exciting -- computing experience.
+
+The last decade has seen a Cambrian explosion of form
+factors, screen sizes, and interaction paradigms. We now
+have multitouch screens that fit in our pockets and voice-
+activated personal-assistant devices. These innovations have
+expanded the horizons of consumer technology and redefined
+our view of what a computer can be.
+
+All of our wonderful new gadgetry comes at a cost, however.
+While the "best-case scenario" for a computer user in 2017
+is certainly better than it was in 2007, the worst case is
+probably worse. We now have exploding smartphones and TV
+shows that cause Alexa to order products. We rely increas-
+ingly on videoconferencing and cloud storage; we haven't
+figured out a good plan B for when our audio mysteriously
+doesn't work or the internet is down at the office. The
+complexity of our computer ecosystem produces complex
+failures that are difficult to predict and compensate for.
+
+In spite of the rapid development of computing technology,
+our basic needs as computer users have not significantly
+changed for decades. We still need to create text documents,
+perform calculations, access information, and communicate.
+For most of us, it's important that we be able to accomplish
+these tasks reliably. We should not be stymied if our
+Internet connection fails, or our phone runs out of battery,
+or a company whose product we use goes out of business. Yet
+all of these events threaten daily to obstruct us. Twenty
+years ago, they would have been non-issues: software that
+didn't absolutely need a network connection wouldn't rely on
+one; computers didn't usually rely on batteries for power;
+shrink-wrapped software meant that you could continue to use
+products that had been abandoned by their creators.
+
+The common thread underlying these issues is dependency.
+Software fails because it makes assumptions about things
+outside itself -- things which are outside of the control of
+the people who created that software, and which therefore
+cannot be taken for granted. In order to be reliable,
+software must make few assumptions. It should depend on as
+little as possible. Those things on which it does depend
+must be reliable.
+
+This is the core of the Grove's design philosophy: depend
+only on reliable things. Have a backup plan, in case one
+of the "reliable" things fails. Adhering to these simple
+principles enables us to build super-reliable software.
+
+Here are some of the ways we put this principle into
+practice:
+
+  * Grove software does not need an Internet connection to
+    work. All your data is stored on your device, where you
+    can access it at any time.
+
+  * The Grove runs in a web browser because web browsers
+    work in more or less the same way across operating
+    systems. Since there are several organizations making
+    web browsers, the Grove's existence cannot be endangered
+    by the insolvency of any one of them.
+
+  * Because the Grove works exactly the same way on a wide
+    variety of computers, you can easily switch devices if
+    the one you're using runs out of batteries. When you
+    save your progress on a Grove, it takes a snapshot of
+    the entire system and downloads it as a file. You can
+    copy that file to any computer and pick up right where
+    you left off.
+
+  * Once installed, Grove software remains on the system.
+    Even if that software vanishes from the Internet, you
+    can continue to use it. Contrast this with a web service
+    like 750words.com -- a great site for journaling, but
+    who knows if it'll be around in ten years?
+
+  * The Grove's keyboard-only interface may be offputting to
+    some, but while pointer input devices run the gamut from
+    touchscreens to trackpads to mice, keyboards are
+    essentially the same on every platform. We've avoided
+    assigning meaning to keys like 'control' and 'command'
+    that aren't present on every computer. That means you
+    won't have to re-learn your muscle memory when you
+    switch computers.
+
+Another common cause of software failures is simple
+programmer error -- in other words, bugs. This source of
+failure has actually diminished over the last two decades
+with the steady progress of programming languages that
+minimize opportunities for error.
+
+A few countervailing currents have worked to keep bugs
+alive, however. One is the complexity of modern user inter-
+faces. Only in the last couple of years have we devised UI
+programming patterns that work well for large, complex
+systems. Even with these patterns, the large variety of
+devices and form factors that web UIs must support creates
+complexity and opportunities for bugs to sneak in.
+
+User interfaces are problematic for another reason: because
+they are inherently visual, rather than abstract and
+logical, it is next to impossible to automate UI testing.
+For many programming tasks, programmers can verify the basic
+correctness of their code by writing test procedures that
+feed in various data and check that the correct results
+come out. Automated testing of this kind has gained
+increasing acceptance as an indispensable part of software
+development. However, it's not generally possible to write a
+program that tests that a UI looks good, so UI testing is
+still performed by humans poking around the app and visually
+inspecting things.
+
+The Grove's fixed-size, text-only UI changes all that. As if
+by magic, it's now possible to automate UI testing, because
+the only thing the test program needs to check is what text
+is displayed on the screen. Because the UI looks the same on
+every system, a single test verifies that that it will look
+good everywhere. The UI is no longer a hiding place for
+bugs.
+
+%%hidden
+
+            "The number of transitors on a chip
+             (and thus, the power of computers)
+             doubles every eighteen months"
+                                  --Moore's law
+
+            "The speed of software halves every
+             eighteen months"
+                                   --Gates' Law
+
+Our answer to this problem is to approach software with a
+mentality of sufficiency. In other words, we believe that
+software with a limited feature set--software that "just
+works" and isn't constantly changing for no reason--can
+adequately serve almost everyone's needs.
 
 Throughout our design and development cycle, we're
-constantly asking ourselves: "do we really need this
-feature?" "how can this be made simpler?"
+constantly asking ourselves: "Do we really need this
+feature? How can this be made simpler?"
 
-=== Philosophy
+------------------------------------------------------------
+
+
+
+------------------------------------------------------------
 
 Our product design is guided by a few key promises:
 
@@ -94,6 +215,12 @@ the WTFPL.
 * Our APIs are designed to support and  encourage  a  functional
 programming style, while allowing a hybrid of functional, pro-
 cedural, and OO approaches.
+
+1. Do no harm.
+2. Make no commitments you can't keep.
+3. Take commitments seriously.
+4.
+
 ===== DATA END =================================================
 */
 
@@ -104,95 +231,20 @@ function dataSection(string) {
   return parts[1]
 }
 
-function paragraphs(string) {
-  return string.split(/\n\n+/)
-}
-
-function lastOf(array) {
-  return array[array.length - 1]
-}
-
-function wordWrap(paragraph, width) {
-  if (paragraph.length === 0) {
-    return []
-  }
-
-  var lines = []
-  var lineLength = -1
-
-  paragraph.split(/\s+/).forEach(function (word) {
-    var wordWontFit = lineLength + 1 + word.length > width
-
-    if (lines.length === 0 || wordWontFit) {
-      lineLength = -1
-      lines.push([])
-    }
-
-    lineLength += word.length + 1
-    lastOf(lines).push(word)
-  })
-
-  return lines.map(function(line) { return line.join(' ') })
-}
-
-function justifyByAddingSpaceOnRight(line, screenWidth) {
-  var spacesToAdd = screenWidth - line.length
-
-  if (spacesToAdd <= 0) return line
-
-  var words = line.split(/\s+/)
-
-  if (words.length === 1) return line
-
-  var spacesNeeded = spacesToAdd + words.length - 1
-  var i = words.length - 1
-  while (spacesNeeded > 0) {
-    spacesNeeded--
-    words[i] = ' ' + words[i]
-    i--
-    if (i === 0) i = words.length - 1
-  }
-
-  return words.join('')
-}
-
-function justifyByAddingSpaceOnLeft(line, screenWidth) {
-  var spacesToAdd = screenWidth - line.length
-
-  if (spacesToAdd <= 0) return line
-
-  var words = line.split(/\s+/)
-
-  if (words.length === 1) return line
-
-  var spacesNeeded = spacesToAdd + words.length - 1
-  var i = 1
-  while (spacesNeeded > 0) {
-    spacesNeeded--
-    words[i] = ' ' + words[i]
-    i++
-    if (i === words.length) i = 1
-  }
-
-  return words.join('')
-}
-
-function justify(text, screenWidth) {
-  var lines = wordWrap(text, screenWidth)
-  return lines.map(function(line, i) {
-    if (i === lines.length - 1) {
-      return line
-    }
-    if (i % 2 === 0) {
-      return justifyByAddingSpaceOnRight(line, screenWidth)
-    } else {
-      return justifyByAddingSpaceOnLeft(line, screenWidth)
-    }
-  })
-}
-
 function homePage(data) {
   return dataSection(data.read('startup'))
+}
+
+function pad(n, s) {
+  s = s.toString()
+  var toAdd = n - s.length
+  return toAdd > 0
+    ? _60_SPACES.slice(0, toAdd) + s
+    : s
+}
+
+function linesRemaining() {
+  return lines.length - viewportHeight - lineOffset
 }
 
 var lineOffset = 0
@@ -200,7 +252,7 @@ var lines = []
 var output = []
 var kHeld = false
 var jHeld = false
-var viewportHeight = 28
+var viewportHeight = 31
 var _60_SPACES = "                              "
                + "                              "
 function main(event, data) {
@@ -215,20 +267,13 @@ function main(event, data) {
       lineOffset--
     }
 
-    if(jHeld && lineOffset < lines.length - viewportHeight) {
+    if (jHeld && linesRemaining() > 0) {
       lineOffset++
     }
   }
 
   if (event.type === 'startup') {
-    var ps = paragraphs(homePage(data))
-    var justified = ps.map(function(p) {
-      return justify(p, 60)
-    })
-
-    lines = justified.reduce(function(result, next) {
-      return result.concat(['']).concat(next)
-    })
+    lines = homePage(data).split('\n')
 
     updatedRecords.doNotWarnAboutUnsavedChanges = 'exists'
   }
@@ -254,15 +299,15 @@ function main(event, data) {
   }
 
   output =
-   [ '╔════════════════════[ druidic.github.io ]═════════════════════╗'
-   , '║                                                              ║'
-   ]
-   .concat(lines.slice(lineOffset, lineOffset + viewportHeight).map(function(line) {
-      return '║ ' + (line + _60_SPACES).slice(0, 60) + ' ║'
-    }))
-   .concat([
-     '║                                                              ║',
-     '╚═════════ * * * Use the J and K keys to scroll * * * ═════════╝'
+    lines.slice(lineOffset, lineOffset + viewportHeight).map(function(line) {
+      return LineBuffer('  ' + line, {fg: 'purple', bg: 'peach'})
+    })
+    .concat([
+     LineBuffer(
+       '  Scroll with J and K.                         '
+       + pad(4, linesRemaining()) + ' more line'
+       + (linesRemaining() == 1 ? '' : 's')
+       , {fg: 'black', bg: 'phosphorgreen', b: 1})
     ])
 
   return {
@@ -368,136 +413,10 @@ describe('dataSection', function() {
   })
 })
 
-describe('word wrap', function() {
-  scenario
-  = 'on empty text'
-
-  test(function() {
-    expect(wordWrap('', 10)).toEqual([])
-  })
-
-  scenario
-  = 'when text is shorter than the screen width'
-
-  test(function() {
-    expect(wordWrap('foo bar', 10))
-      .toEqual(['foo bar'])
-  })
-
-  scenario
-  = 'when text is exactly the screen width'
-
-  test(function() {
-    expect(wordWrap('foo bar', 7))
-      .toEqual(['foo bar'])
-  })
-
-  scenario
-  = 'when text wraps onto a second line'
-
-  test(function() {
-    expect(wordWrap('foo bar baz', 7))
-      .toEqual(['foo bar', 'baz'])
-  })
-
-  scenario
-  = 'when text wraps onto a third line'
-
-  test(function() {
-    expect(wordWrap('foo bar baz', 3))
-      .toEqual(['foo', 'bar', 'baz'])
-  })
-
-  scenario
-  = 'when word is too long to fit on one line'
-
-  xtest(function() {
-    expect(wordWrap('reallylong', 3))
-      .toEqual(['rea', 'lly', 'lon', 'g'])
-  })
-
-  scenario
-  = 'when there are multiple words per line'
-
-  test(function() {
-    var text
-      = "'Twas brillig, and the slithy toves "
-      + "did gyre and gimble in the wabe"
-
-    var wrapped =
-      [ "'Twas brillig,"
-      , "and the slithy"
-      , "toves did gyre"
-      , "and gimble in"
-      , "the wabe"
-      ]
-
-    expect(wordWrap(text, 15)).toEqual(wrapped)
-  })
-
-  scenario
-  = 'when screen width is 0 chars'
-
-  test(function() {
-    expect(wordWrap('one two three', 0))
-      .toEqual(['one', 'two', 'three'])
-  })
-})
-
-describe('justify', function() {
-
-  scenario =
-  "on empty text"
-
-  test(function() {
-    expect(justify('', 10)).toEqual([])
-  })
-
-  scenario =
-  "on a single word"
-
-  test(function() {
-    expect(justify('foo', 10)).toEqual(['foo'])
-  })
-
-  scenario =
-  "does not modify a single line of text"
-
-  test(function() {
-    expect(justify('foo bar', 8)).toEqual(['foo bar'])
-  })
-
-  scenario =
-  "adds spaces to the non-last line of a multi-line paragraph"
-
-  test(function() {
-    expect(justify('foo bar\nbaz', 8)).toEqual(['foo  bar', 'baz'])
-  })
-
-  scenario =
-  "does not add spaces to the last line of a paragraph"
-
-  test(function() {
-    expect(justify('foo bar\nfoo bar', 8)).toEqual(['foo  bar', 'foo bar'])
-  })
-
-  scenario =
-  "adds spaces starting from the right side of the first line"
-
-  test(function() {
-    expect(justify('foo bar baz\nfoo', 12)).toEqual(['foo bar  baz', 'foo'])
-  })
-
-  scenario =
-  "adds spaces starting from the left side of the second line"
-
-  test(function() {
-    expect(justify('foo bar baz\nfoo bar baz\nfoo', 12))
-      .toEqual([
-        'foo bar  baz',
-        'foo  bar baz',
-        'foo'
-      ])
+xdescribe('displayPage', function() {
+  it('renders an empty string as an empty array', function() {
+    expect(displayPage({text: '', scroll: 0}))
+      .toEqual([])
   })
 })
 
