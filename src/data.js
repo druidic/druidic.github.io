@@ -1,6 +1,41 @@
+// function homePageText(data) {
+//   return dataSection(data.read('startup'))
+//     .split('%%')
+//     .find(function(text) {
+//       return text.indexOf('homePage') === 0
+//     })
+//     .replace(/^homePage\n/, '')
+// }
+//
+// function downloadAGroveText(data) {
+//   return dataSection(data.read('startup'))
+//     .split('%%')
+//     .find(function(text) {
+//       return text.indexOf('downloadAGrove') === 0
+//     })
+//     .replace(/^downloadAGrove\n/, '')
+// }
+
+var homePageText = extractPageData('homePage')
+var downloadAGroveText = extractPageData('downloadAGrove')
+var learnMoreText = extractPageData('learnMore')
+
+function extractPageData(tag) {
+  var lineWithTag = new RegExp('^' + tag + '\n')
+
+  return function(data) {
+    return dataSection(data.read('startup'))
+      .split('%%')
+      .find(function(text) {
+        return text.indexOf(tag) === 0
+      })
+      .replace(lineWithTag, '')
+  }
+}
+
 /*
-===== DATA BEGIN ===============================================
-%%homepage
+===== DATA BEGIN ===========================================
+%%homePage
                      druidic.github.io
 
 
@@ -17,11 +52,11 @@ connection.
 
   [1]: Download a Grove computer
   [2]: Learn more about the Grove's design philosophy
-
 %%learnMore
 
-          Enter the Grove: Our Design Philosophy
+           Enter the Grove: Our Design Philosophy
 
+            Press [H] to return to the homepage.
 
 Viewed against the backdrop of modern software and computer
 technology the Grove's minimalist, retro design seems incon-
@@ -74,7 +109,7 @@ products that had been abandoned by their creators.
 The common thread underlying these issues is dependency.
 Software fails because it makes assumptions about things
 outside itself -- things which are outside of the control of
-the people who created that software, and which therefore
+the software's users and creators, and which therefore
 cannot be taken for granted. In order to be reliable,
 software must make few assumptions. It should depend on as
 little as possible. Those things on which it does depend
@@ -132,7 +167,7 @@ alive, however. One is the complexity of modern user inter-
 faces. Only in the last couple of years have we devised UI
 programming patterns that work well for large, complex
 systems. Even with these patterns, the large variety of
-devices and form factors that web UIs must support creates
+devices and screen sizes that web UIs must support creates
 complexity and opportunities for bugs to sneak in.
 
 User interfaces are problematic for another reason: because
@@ -152,10 +187,14 @@ The Grove's fixed-size, text-only UI changes all that. As if
 by magic, it's now possible to automate UI testing, because
 the only thing the test program needs to check is what text
 is displayed on the screen. Because the UI looks the same on
-every system, a single test verifies that that it will look
-good everywhere. The UI is no longer a hiding place for
-bugs.
+every system, a single test verifies that that it will work
+everywhere. The UI is no longer a hiding place for bugs.
 
+            Press [H] to return to the homepage.
+%%downloadAGrove
+Coming soon!
+
+Press [H] to return to the homepage.
 %%hidden
 
             "The number of transitors on a chip
@@ -223,201 +262,3 @@ cedural, and OO approaches.
 
 ===== DATA END =================================================
 */
-
-function dataSection(string) {
-  var parts = ('\n' + string).split(/\n===== DATA[^\n]*\n/)
-  if (parts.length === 1) return ''
-  if (parts.length !== 3) throw 'Could not parse data section'
-  return parts[1]
-}
-
-function homePage(data) {
-  return dataSection(data.read('startup'))
-}
-
-function pad(n, s) {
-  s = s.toString()
-  var toAdd = n - s.length
-  return toAdd > 0
-    ? _60_SPACES.slice(0, toAdd) + s
-    : s
-}
-
-function linesRemaining() {
-  return lines.length - viewportHeight - lineOffset
-}
-
-var lineOffset = 0
-var lines = []
-var output = []
-var kHeld = false
-var jHeld = false
-var viewportHeight = 31
-var _60_SPACES = "                              "
-               + "                              "
-function main(event, data) {
-  var updatedRecords = {}
-
-  if (event.type === 'clock') {
-    if (!kHeld && !jHeld) {
-      return output
-    }
-
-    if (kHeld && lineOffset > 0) {
-      lineOffset--
-    }
-
-    if (jHeld && linesRemaining() > 0) {
-      lineOffset++
-    }
-  }
-
-  if (event.type === 'startup') {
-    lines = homePage(data).split('\n')
-
-    updatedRecords.doNotWarnAboutUnsavedChanges = 'exists'
-  }
-
-  if (event.type === 'keyDown') {
-    if (event.key === 'K'.charCodeAt(0)) {
-      kHeld = true
-    }
-
-    if (event.key === 'J'.charCodeAt(0)) {
-      jHeld = true
-    }
-  }
-
-  if (event.type === 'keyUp') {
-    if (event.key === 'K'.charCodeAt(0)) {
-      kHeld = false
-    }
-
-    if (event.key === 'J'.charCodeAt(0)) {
-      jHeld = false
-    }
-  }
-
-  output =
-    lines.slice(lineOffset, lineOffset + viewportHeight).map(function(line) {
-      return LineBuffer('  ' + line, {fg: 'purple', bg: 'peach'})
-    })
-    .concat([
-     LineBuffer(
-       '  Scroll with J and K.                         '
-       + pad(4, linesRemaining()) + ' more line'
-       + (linesRemaining() == 1 ? '' : 's')
-       , {fg: 'black', bg: 'phosphorgreen', b: 1})
-    ])
-
-  return {
-    screen: output,
-    records: updatedRecords
-  }
-}
-
-// =============================================================
-// === TESTS ===================================================
-// =============================================================
-
-;(function() { if (typeof jasmine !== 'undefined') {
-
-var scenario
-function test(runTestFunc) {
-  it(scenario, runTestFunc)
-}
-
-function xtest(runTestFunc) {
-  xit(scenario, runTestFunc)
-}
-
-function ftest(runTestFunc) {
-  fit(scenario, runTestFunc)
-}
-
-describe('dataSection', function() {
-
-  scenario = 'given an empty string'
-  test(function() {
-    expect(dataSection('')).toBe('')
-  })
-
-  scenario
-  = 'given a string with no data section'
-
-  test(function() {
-    expect(dataSection('foo')).toBe('')
-  })
-
-  scenario
-  = 'given a string with only one ===== DATA'
-
-  test(function() {
-    var string = '===== DATA\nfoo'
-    expect(function() { dataSection(string) }).toThrow()
-  })
-
-  scenario
-  = 'given a string with multiple data sections'
-
-  test(function() {
-    var string
-     = '===== DATA\n'
-     + 'foo\n'
-     + '===== DATA\n'
-     + 'bar\n'
-     + '===== DATA\n'
-     + 'baz\n'
-     + '===== DATA\n'
-
-     expect(function() { dataSection(string) }).toThrow()
-  })
-
-  scenario
-  = 'given a string that demarcates a single data section'
-
-  test(function() {
-    var string
-     = '===== DATA\n'
-     + 'foo\n'
-     + '===== DATA\n'
-     + 'bar\n'
-
-     expect(dataSection(string)).toBe('foo')
-  })
-
-  scenario
-  = 'when DATA demarcation has other stuff following it'
-
-  test(function() {
-    var string
-     = '===== DATA BEGIN =====\n'
-     + 'foo\n'
-     + '===== DATA END =====\n'
-     + 'bar\n'
-
-     expect(dataSection(string)).toBe('foo')
-  })
-
-  scenario
-  = 'when lines contain "===== DATA" somewhere in the middle'
-
-  test(function() {
-    var string
-     = 'blah blah ===== DATA\n'
-     + 'foo\n'
-     + 'blah ===== DATA\n'
-     + 'bar\n'
-
-     expect(dataSection(string)).toBe('')
-  })
-})
-
-xdescribe('displayPage', function() {
-  it('renders an empty string as an empty array', function() {
-    expect(displayPage({text: '', scroll: 0}))
-      .toEqual([])
-  })
-})
-
-}})()

@@ -155,7 +155,9 @@ body {
   width: 532px;
 
   font-family: DejaVuMono, Menlo, Consolas, monospace;
-  font-size: 13.8px;
+  font-size: 14px; /* font-size should be an integer */
+                   /* because Chromebook rounds it. */
+  letter-spacing: -0.1px;
   white-space: pre;
   overflow: hidden;
 }
@@ -243,6 +245,8 @@ body {
 .fg-dimgray { color: dimgray; }
 .fg-goldenrod { color: goldenrod; }
 .fg-saddlebrown { color: saddlebrown; }
+.fg-peach { color: #ffd0a0; }
+.fg-phosphorgreen { color: #00d840; }
 
 .bg-cyan { background-color: cyan; }
 .bg-magenta { background-color: magenta; }
@@ -252,12 +256,15 @@ body {
 .bg-green { background-color: green; }
 .bg-blue { background-color: blue; }
 .bg-orange { background-color: orange; }
+.bg-purple { background-color: purple; }
 .bg-violet { background-color: violet; }
 .bg-white { background-color: white; }
 .bg-silver { background-color: silver; }
 .bg-dimgray { background-color: dimgray; }
 .bg-goldenrod { background-color: goldenrod; }
 .bg-saddlebrown { background-color: saddlebrown; }
+.bg-peach { background-color: #ffd0a0; }
+.bg-phosphorgreen { background-color: #00d840; }
     </style>
     <script>
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
@@ -269,38 +276,38 @@ var saveAs=saveAs||function(e){"use strict";if(typeof e==="undefined"||typeof na
     <div id="case">
       <div id="bezel">
         <div id="terminal">
-          <p id="l0">╔════════════════════[ druidic.github.io ]═════════════════════╗</p>
-          <p id="l1">║                                                              ║</p>
-          <p id="l2">║ Welcome to the homepage of Druidic Technologies, creators of ║</p>
-          <p id="l3">║ the  Grove--the  world's  first  and  squarest  virtual home ║</p>
-          <p id="l4">║ computer.                                                    ║</p>
-          <p id="l5">║                                                              ║</p>
-          <p id="l6">║ If you already know why you're here, you can hit the `G` key ║</p>
-          <p id="l7">║ on  your  keyboard  to  get  your  very  own Grove computer. ║</p>
-          <p id="l8">║ Otherwise, read on!                                          ║</p>
-          <p id="l9">║                                                              ║</p>
-          <p id="l10">║ === Why?                                                     ║</p>
-          <p id="l11">║                                                              ║</p>
-          <p id="l12">║ Our lives are increasingly filled with software. Much of the ║</p>
-          <p id="l13">║ software  we  rely  on  is overcomplicated and buggy because ║</p>
-          <p id="l14">║ it's not designed with the  user's  needs  first.  Companies ║</p>
-          <p id="l15">║ want  you to live on the bleeding edge of technology so they ║</p>
-          <p id="l16">║ can sell you more stuff, and to this end                     ║</p>
-          <p id="l17">║                                                              ║</p>
-          <p id="l18">║ Sometimes this is because companies are  competing  to  have ║</p>
-          <p id="l19">║ the  most  features  in  their product, irrespective of what ║</p>
-          <p id="l20">║ their users actually need. Sometimes  ad-supported  software ║</p>
-          <p id="l21">║ is specifically designed to distract, divert, or addict you, ║</p>
-          <p id="l22">║ because the more time you spend using it the more revenue it ║</p>
-          <p id="l23">║ brings  in.  Sometimes,  products  are  optimized  for being ║</p>
-          <p id="l24">║ pleasant to use in the store, not for actual day-to-day use. ║</p>
-          <p id="l25">║                                                              ║</p>
-          <p id="l26">║ 1. A lot of computer technology isn't  designed  to  benefit ║</p>
-          <p id="l27">║ users  a.  Software  bloat b. Moral hazard of advertising c. ║</p>
-          <p id="l28">║ Overpromises - works under ideal  conditions  (i.e.  in  the ║</p>
-          <p id="l29">║ store)  2.  Users  can't  opt-out  of  changes  because  old ║</p>
-          <p id="l30">║                                                              ║</p>
-          <p id="l31">╚═════════ * * * Use the J and K keys to scroll * * * ═════════╝</p>
+          <p id="l0">                       druidic.github.io                        </p>
+          <p id="l1">                                                                </p>
+          <p id="l2">                                                                </p>
+          <p id="l3">        Welcome to the homepage of Druidic Technologies,        </p>
+          <p id="l4">     creators of the Grove--the world's first and squarest      </p>
+          <p id="l5">                     virtual home computer.                     </p>
+          <p id="l6">                                                                </p>
+          <p id="l7">  The Grove gives you a way to perform common computing tasks   </p>
+          <p id="l8">  using exactly the same interface on any system -- Mac OS,     </p>
+          <p id="l9">  Windows, Linux, or Chromebook. It doesn't need an Internet    </p>
+          <p id="l10">  connection.                                                   </p>
+          <p id="l11">                                                                </p>
+          <p id="l12">    Use the number keys to select an option:                    </p>
+          <p id="l13">                                                                </p>
+          <p id="l14">    [1]: Download a Grove computer                              </p>
+          <p id="l15">    [2]: Learn more about the Grove's design philosophy         </p>
+          <p id="l16">                                                                </p>
+          <p id="l17">                                                                </p>
+          <p id="l18">                                                                </p>
+          <p id="l19">                                                                </p>
+          <p id="l20">                                                                </p>
+          <p id="l21">                                                                </p>
+          <p id="l22">                                                                </p>
+          <p id="l23">                                                                </p>
+          <p id="l24">                                                                </p>
+          <p id="l25">                                                                </p>
+          <p id="l26">                                                                </p>
+          <p id="l27">                                                                </p>
+          <p id="l28">                                                                </p>
+          <p id="l29">                                                                </p>
+          <p id="l30">────────────────────────────────────────────────────────────────</p>
+          <p id="l31">  Scroll with J and K  :  0 more lines                          </p>
         </div>
       </div>
       <div id="controls">
@@ -327,10 +334,11 @@ var saveAs=saveAs||function(e){"use strict";if(typeof e==="undefined"||typeof na
       </div>
     </div>
 
-    <script id="records">var RECORDS = {"startup":"/*\n===== DATA BEGIN ===============================================\nWelcome to the homepage of Druidic Technologies, creators of the\nGrove--the world's first and squarest virtual home computer.\n\nIf you already know why you're here, you can hit the `G` key\non your keyboard to get your very own Grove computer. Otherwise,\nread on!\n\n\n=== Why?\n\nOur  lives  are increasingly filled with software.\nMuch of the software we rely on is overcomplicated and buggy\nbecause it's not designed with the user's needs first.\nCompanies want you to live on the bleeding edge of technology\nso they can sell you more stuff, and to this end\n\nSometimes this is because companies are competing to have\nthe most features in their product, irrespective of what\ntheir users actually need. Sometimes ad-supported software\nis specifically designed to distract, divert, or addict\nyou, because the more time you spend using it the more\nrevenue it brings in. Sometimes, products are optimized\nfor being pleasant to use in the store, not for actual day-to-day\nuse.\n\n\n\n1. A lot of computer technology isn't designed to benefit users\n  a. Software bloat\n  b. Moral hazard of advertising\n  c. Overpromises - works under ideal conditions (i.e. in the store)\n2. Users can't opt-out of changes because old software\n   and hardware stop being available.\n3. The Grove lets you opt-in to a world of user-centered, permanent software\n   -- software that stays simple and always works.\n\nOur  lives  are increasingly filled with software--software that\nalways seems a little bit teetery, like it's just barely hanging\ntogether.  Bugs,  errors, and confusing interfaces are the norm.\nThe bugs eventually get fixed, but it  seems  like  as  soon  as\nthey're  ironed  out,  the  state of the art has moved on to the\nnext big thing. A new product gets rolled out, full of half-kept\npromises, and the cycle continues.\n\nThere are a bunch of reasons why the computing world works  this\nway, but the big one is that it benefits the companies that make\ncomputers and software. A company that never updates its product\nwill soon go out of business as the market saturates. In order\nto stay afloat, companies need to churn out \"new and improved\"\nversions of their product so their customers will keep paying.\nIn theory, the new features are valuable to the people who use\nthe software. In reality, they're often dead weight, serving\nonly to slow the whole system down and add to an already be-\nwildering myriad of tools and options.\n\nSince more complex software gobbles more memory\nand processor power, you're also forced to have the latest hardware\nto keep your software up to date. Computer manufacturers like\nthis, obviously.\n\nThere's an extra layer of perniciousness when free software\nand websites are supported by advertisements. Unlike pay-to-download\napps, the advertising model encourages software designers to try\nto  get  you to stay on the site or in the app as long as poss-\nible, and come back as often as possible, so you see more  ads.\nThis  has  led  to the rise of apps that work, psychologically,\nlike slot machines. Their goal is not to serve you, but to  get\nyou hooked. In practical terms, that often means making it *harder*\nto achieve what you want to do with the app, directing your\nattention instead toward what advertisers want to you do.\n\nWorse than the upgrade rat-race is the fact that you often have\nno real way to opt out. Websites, operating systems, and apps\ncan change overnight without giving us a say in the matter. Given that\nour day-to-day computer use revolves around self-upgrading\nsoftware, it can be easy to feel that we don't truly own or have\ncontrol over our computers, even as we become more and more\ndependent on them.\n\nDruidic's mission is to give you a way out, a path to escape\nthe samsaric cycles of software bloat, addictive apps,\nand forced upgrades. The first step on that path is the Grove\ncomputer--a simulated PC that runs in your web browser.\nHey look! You're using one right now.\n\nThe Grove is the antithesis of modern software design, and\ntherein lies its strength. Because it's so primitive,\nit can run basically anywhere, and it's built to last forever.\nIts only requirements are a web browser and\na keyboard, and both of those artifacts are going to be with us for a long, long time.\n(no, voice and gestural interfaces won't kill the keyboard, in large part because programmers\nwill always need super-precise control over the input they give to their computers.)\nI have a hard time imagining what technology will be like in 2050, but\nI'd be willing to bet that you'll still be able to run a Grove. And that\nmeans that any data you commit to a Grove computer will still be\naccessible, through exactly the same interface that you used\nto create it.\n\nI don't know about you, but I yearn for that kind of permanence.\nSuch swathes of our lives are consumed by consuming ephemera--even\nphysical things aren't built to be permanent, anymore.\nCan you imagine leaving any of your current possessions to your great-grandkids?\nHow about leaving them a *chunk of software*? The thought should\nseem ridiculous. Until now, it *was* ridiculous.\n\nBut we're setting out to make it a reality. Heirloom-quality code.\nThat's our goal.\n\nNon-programmers may never have thought about the process of\nas an artifact whose creation has a process.\nBut just like a piece of furniture, software can be slapped\ntogether cheaply or carefully handcrafted. It can be sturdy or\nflimsy, ergonomic or uncomfortable, simple or ornamented. It can\nbe a throwaway commodity, or something unique and personal that\nbrings joy every time you use it. Many people have probably never\nrecognized the potential of computers to create that kind of joy.\nBut they can. They totally can! And just as with a piece of\nfurniture, craftsmanship, ergonomics, and attention to detail\nall contribute to the experience.\n\nI'm not claiming that the Grove is going to replace\nall the technology you currently use. By definition, it can't do that,\nbecause in order to exist it needs a real computer with a real OS\nand a browser. Plus, you're still going to want to watch YouTube videos\nand check Facebook, and the Grove will never help you with those things.\nIt can't, because they're ephemeral, and it would suck if we built\nthe world's coolest YouTube-based social app for the Grove, and then\ntwenty years later YouTube doesn't exist anymore. Permanence means,\nunfortunately, that you can't depend on things that might go away.\n\nBut so many other things *are* possible! The Grove can\nhandle programming, word-processing, spreadsheets,\npersonal organization, and retro-style games. I also have\nthis idea for a multimedia webzine of art, text, and programs that\nwould run on the Grove.\n\n\n=== Philosophy\n\nOur product design is guided by a few key promises:\n\n* We'll never show you ads.\n\n* We'll never mine your data.\n\n* We'll never force you to upgrade.\n\n* If  you  do  choose to upgrade, we'll make it easy to go back.\nWe'll keep all releases of our software available forever, and\nlet you choose whatever version suits you best.\n\n* We want to make sure that our software runs on as many systems\nas possible. We support Mac OSX, Windows, and Linux  operating\nsystems, and Firefox, Chrome, Safari and Opera web browsers.\n\nIf you're technically inclined, you might also be interested  in\nour development practices:\n\n* We practice and encourage test-driven development. We think our app\nframework will help you write the most testable code you've\never worked on.\n\n* All our code is open-source and viewable on Github.\n\n* Our  code and third-party dependencies are licensed under non-\nparasitic open-source licenses, such as the  MIT  license  and\nthe WTFPL.\n\n* Our APIs are designed to support and  encourage  a  functional\nprogramming style, while allowing a hybrid of functional, pro-\ncedural, and OO approaches.\n===== DATA END =================================================\n*/\n\nfunction dataSection(string) {\n  var parts = ('\\n' + string).split(/\\n===== DATA[^\\n]*\\n/)\n  if (parts.length === 1) return ''\n  if (parts.length !== 3) throw 'Could not parse data section'\n  return parts[1]\n}\n\nfunction paragraphs(string) {\n  return string.split(/\\n\\n+/)\n}\n\nfunction lastOf(array) {\n  return array[array.length - 1]\n}\n\nfunction wordWrap(paragraph, width) {\n  if (paragraph.length === 0) {\n    return []\n  }\n\n  var lines = []\n  var lineLength = -1\n\n  paragraph.split(/\\s+/).forEach(function (word) {\n    var wordWontFit = lineLength + 1 + word.length > width\n\n    if (lines.length === 0 || wordWontFit) {\n      lineLength = -1\n      lines.push([])\n    }\n\n    lineLength += word.length + 1\n    lastOf(lines).push(word)\n  })\n\n  return lines.map(function(line) { return line.join(' ') })\n}\n\nfunction justifyByAddingSpaceOnRight(line, screenWidth) {\n  var spacesToAdd = screenWidth - line.length\n\n  if (spacesToAdd <= 0) return line\n\n  var words = line.split(/\\s+/)\n\n  if (words.length === 1) return line\n\n  var spacesNeeded = spacesToAdd + words.length - 1\n  var i = words.length - 1\n  while (spacesNeeded > 0) {\n    spacesNeeded--\n    words[i] = ' ' + words[i]\n    i--\n    if (i === 0) i = words.length - 1\n  }\n\n  return words.join('')\n}\n\nfunction justifyByAddingSpaceOnLeft(line, screenWidth) {\n  var spacesToAdd = screenWidth - line.length\n\n  if (spacesToAdd <= 0) return line\n\n  var words = line.split(/\\s+/)\n\n  if (words.length === 1) return line\n\n  var spacesNeeded = spacesToAdd + words.length - 1\n  var i = 1\n  while (spacesNeeded > 0) {\n    spacesNeeded--\n    words[i] = ' ' + words[i]\n    i++\n    if (i === words.length) i = 1\n  }\n\n  return words.join('')\n}\n\nfunction justify(text, screenWidth) {\n  var lines = wordWrap(text, screenWidth)\n  return lines.map(function(line, i) {\n    if (i === lines.length - 1) {\n      return line\n    }\n    if (i % 2 === 0) {\n      return justifyByAddingSpaceOnRight(line, screenWidth)\n    } else {\n      return justifyByAddingSpaceOnLeft(line, screenWidth)\n    }\n  })\n}\n\nfunction homePage(data) {\n  return dataSection(data.read('startup'))\n}\n\nvar lineOffset = 0\nvar lines = []\nvar output = []\nvar kHeld = false\nvar jHeld = false\nvar viewportHeight = 28\nvar _60_SPACES = \"                              \"\n               + \"                              \"\nfunction main(event, data) {\n\n\n  if (event.type === 'clock') {\n    if (!kHeld && !jHeld) {\n      return output\n    }\n\n    if (kHeld && lineOffset > 0) {\n      lineOffset--\n    }\n\n    if(jHeld && lineOffset < lines.length - viewportHeight) {\n      lineOffset++\n    }\n  }\n\n  if (event.type === 'startup') {\n    var ps = paragraphs(homePage(data))\n    var justified = ps.map(function(p) {\n      return justify(p, 60)\n    })\n\n    lines = justified.reduce(function(result, next) {\n      return result.concat(['']).concat(next)\n    })\n  }\n\n  if (event.type === 'keyDown') {\n    if (event.key === 'K'.charCodeAt(0)) {\n      kHeld = true\n    }\n\n    if (event.key === 'J'.charCodeAt(0)) {\n      jHeld = true\n    }\n  }\n\n  if (event.type === 'keyUp') {\n    if (event.key === 'K'.charCodeAt(0)) {\n      kHeld = false\n    }\n\n    if (event.key === 'J'.charCodeAt(0)) {\n      jHeld = false\n    }\n  }\n\n  output =\n   [ '╔════════════════════[ druidic.github.io ]═════════════════════╗'\n   , '║                                                              ║'\n   ]\n   .concat(lines.slice(lineOffset, lineOffset + viewportHeight).map(function(line) {\n      return '║ ' + (line + _60_SPACES).slice(0, 60) + ' ║'\n    }))\n   .concat([\n     '║                                                              ║',\n     '╚═════════ * * * Use the J and K keys to scroll * * * ═════════╝'\n    ])\n\n  return output\n}\n\n// =============================================================\n// === TESTS ===================================================\n// =============================================================\n\n;(function() { if (typeof jasmine !== 'undefined') {\n\nvar scenario\nfunction test(runTestFunc) {\n  it(scenario, runTestFunc)\n}\n\nfunction xtest(runTestFunc) {\n  xit(scenario, runTestFunc)\n}\n\nfunction ftest(runTestFunc) {\n  fit(scenario, runTestFunc)\n}\n\ndescribe('dataSection', function() {\n\n  scenario = 'given an empty string'\n  test(function() {\n    expect(dataSection('')).toBe('')\n  })\n\n  scenario\n  = 'given a string with no data section'\n\n  test(function() {\n    expect(dataSection('foo')).toBe('')\n  })\n\n  scenario\n  = 'given a string with only one ===== DATA'\n\n  test(function() {\n    var string = '===== DATA\\nfoo'\n    expect(function() { dataSection(string) }).toThrow()\n  })\n\n  scenario\n  = 'given a string with multiple data sections'\n\n  test(function() {\n    var string\n     = '===== DATA\\n'\n     + 'foo\\n'\n     + '===== DATA\\n'\n     + 'bar\\n'\n     + '===== DATA\\n'\n     + 'baz\\n'\n     + '===== DATA\\n'\n\n     expect(function() { dataSection(string) }).toThrow()\n  })\n\n  scenario\n  = 'given a string that demarcates a single data section'\n\n  test(function() {\n    var string\n     = '===== DATA\\n'\n     + 'foo\\n'\n     + '===== DATA\\n'\n     + 'bar\\n'\n\n     expect(dataSection(string)).toBe('foo')\n  })\n\n  scenario\n  = 'when DATA demarcation has other stuff following it'\n\n  test(function() {\n    var string\n     = '===== DATA BEGIN =====\\n'\n     + 'foo\\n'\n     + '===== DATA END =====\\n'\n     + 'bar\\n'\n\n     expect(dataSection(string)).toBe('foo')\n  })\n\n  scenario\n  = 'when lines contain \"===== DATA\" somewhere in the middle'\n\n  test(function() {\n    var string\n     = 'blah blah ===== DATA\\n'\n     + 'foo\\n'\n     + 'blah ===== DATA\\n'\n     + 'bar\\n'\n\n     expect(dataSection(string)).toBe('')\n  })\n})\n\ndescribe('word wrap', function() {\n  scenario\n  = 'on empty text'\n\n  test(function() {\n    expect(wordWrap('', 10)).toEqual([])\n  })\n\n  scenario\n  = 'when text is shorter than the screen width'\n\n  test(function() {\n    expect(wordWrap('foo bar', 10))\n      .toEqual(['foo bar'])\n  })\n\n  scenario\n  = 'when text is exactly the screen width'\n\n  test(function() {\n    expect(wordWrap('foo bar', 7))\n      .toEqual(['foo bar'])\n  })\n\n  scenario\n  = 'when text wraps onto a second line'\n\n  test(function() {\n    expect(wordWrap('foo bar baz', 7))\n      .toEqual(['foo bar', 'baz'])\n  })\n\n  scenario\n  = 'when text wraps onto a third line'\n\n  test(function() {\n    expect(wordWrap('foo bar baz', 3))\n      .toEqual(['foo', 'bar', 'baz'])\n  })\n\n  scenario\n  = 'when word is too long to fit on one line'\n\n  xtest(function() {\n    expect(wordWrap('reallylong', 3))\n      .toEqual(['rea', 'lly', 'lon', 'g'])\n  })\n\n  scenario\n  = 'when there are multiple words per line'\n\n  test(function() {\n    var text\n      = \"'Twas brillig, and the slithy toves \"\n      + \"did gyre and gimble in the wabe\"\n\n    var wrapped =\n      [ \"'Twas brillig,\"\n      , \"and the slithy\"\n      , \"toves did gyre\"\n      , \"and gimble in\"\n      , \"the wabe\"\n      ]\n\n    expect(wordWrap(text, 15)).toEqual(wrapped)\n  })\n\n  scenario\n  = 'when screen width is 0 chars'\n\n  test(function() {\n    expect(wordWrap('one two three', 0))\n      .toEqual(['one', 'two', 'three'])\n  })\n})\n\ndescribe('justify', function() {\n\n  scenario =\n  \"on empty text\"\n\n  test(function() {\n    expect(justify('', 10)).toEqual([])\n  })\n\n  scenario =\n  \"on a single word\"\n\n  test(function() {\n    expect(justify('foo', 10)).toEqual(['foo'])\n  })\n\n  scenario =\n  \"does not modify a single line of text\"\n\n  test(function() {\n    expect(justify('foo bar', 8)).toEqual(['foo bar'])\n  })\n\n  scenario =\n  \"adds spaces to the non-last line of a multi-line paragraph\"\n\n  test(function() {\n    expect(justify('foo bar\\nbaz', 8)).toEqual(['foo  bar', 'baz'])\n  })\n\n  scenario =\n  \"does not add spaces to the last line of a paragraph\"\n\n  test(function() {\n    expect(justify('foo bar\\nfoo bar', 8)).toEqual(['foo  bar', 'foo bar'])\n  })\n\n  scenario =\n  \"adds spaces starting from the right side of the first line\"\n\n  test(function() {\n    expect(justify('foo bar baz\\nfoo', 12)).toEqual(['foo bar  baz', 'foo'])\n  })\n\n  scenario =\n  \"adds spaces starting from the left side of the second line\"\n\n  test(function() {\n    expect(justify('foo bar baz\\nfoo bar baz\\nfoo', 12))\n      .toEqual([\n        'foo bar  baz',\n        'foo  bar baz',\n        'foo'\n      ])\n  })\n})\n\n}})()\n","doNotWarnAboutUnsavedChanges":"This record prevents a warning from popping up when the user tries to navigate away."}</script>
+    <script id="records">var RECORDS = {"startup":"function DownloadAGrove(state, records) {\n  var scroller = Scroller(downloadAGroveText(records), 30)\n\n  return {\n    collate: collate,\n    display: pageDisplay(32),\n    onKeyDown: onKeyDown,\n    onKeyUp: scroller.onKeyUp,\n    onClock: scroller.onClock\n  }\n\n  function collate() {\n    return {\n      lines: scroller.getLines(),\n      linesRemaining: scroller.getLinesRemaining()\n    }\n  }\n\n  function onKeyDown(event, records, updatedRecords) {\n    scroller.onKeyDown(event)\n\n    if ('H'.charCodeAt(0) === event.key) {\n      goToScreen(Home, records, updatedRecords)\n    }\n  }\n}\nfunction Home(state, records, updatedRecords) {\n  if (!state.launched) {\n    state.launched = true\n    updatedRecords.doNotWarnAboutUnsavedChanges = 'exists'\n  }\n\n  var scroller = Scroller(homePageText(records), 30)\n\n  return {\n    collate: collate,\n    display: pageDisplay(32),\n    onKeyDown: onKeyDown,\n    onKeyUp: scroller.onKeyUp,\n    onClock: scroller.onClock\n  }\n\n  function collate() {\n    return {\n      lines: scroller.getLines(),\n      linesRemaining: scroller.getLinesRemaining()\n    }\n  }\n\n  function onKeyDown(event, records, updatedRecords) {\n    scroller.onKeyDown(event)\n\n    if ('1'.charCodeAt(0) === event.key) {\n      goToScreen(DownloadAGrove, records, updatedRecords)\n    }\n\n    if ('2'.charCodeAt(0) === event.key) {\n      goToScreen(LearnMore, records, updatedRecords)\n    }\n  }\n}\nfunction LearnMore(state, records) {\n  var scroller = Scroller(learnMoreText(records), 30)\n\n  return {\n    collate: collate,\n    display: pageDisplay(32),\n    onKeyDown: onKeyDown,\n    onKeyUp: scroller.onKeyUp,\n    onClock: scroller.onClock\n  }\n\n  function collate() {\n    return {\n      lines: scroller.getLines(),\n      linesRemaining: scroller.getLinesRemaining()\n    }\n  }\n\n  function onKeyDown(event, records, updatedRecords) {\n    scroller.onKeyDown(event)\n\n    if ('H'.charCodeAt(0) === event.key) {\n      goToScreen(Home, records, updatedRecords)\n    }\n  }\n}\nfunction Scroller(text, windowHeight) {\n  var lines = text.split('\\n')\n  var nLines = lines.length\n  var scrollingDown = false\n  var scrollingUp = false\n  var position = 0\n\n  return {\n    onKeyDown: onKeyDown,\n    onKeyUp: onKeyUp,\n    onClock: onClock,\n    getLines: getLines,\n    getLinesRemaining: getLinesRemaining\n  }\n\n  function onKeyDown(event) {\n    if ('J'.charCodeAt(0) === event.key) {\n      scrollingDown = true\n    }\n\n    if ('K'.charCodeAt(0) === event.key) {\n      scrollingUp = true\n    }\n  }\n\n  function onKeyUp(event) {\n    if ('J'.charCodeAt(0) === event.key) {\n      scrollingDown = false\n    }\n\n    if ('K'.charCodeAt(0) === event.key) {\n      scrollingUp = false\n    }\n  }\n\n  function onClock() {\n    if (scrollingDown) {\n      position++\n    }\n\n    if (scrollingUp) {\n      position--\n    }\n\n    if (position > nLines - windowHeight) {\n      position = nLines - windowHeight\n    }\n\n    if (position < 0) {\n      position = 0\n    }\n  }\n\n  function getLines() {\n    return lines.slice(position, position + windowHeight)\n  }\n\n  function getLinesRemaining() {\n    return Math.max(0, nLines - position - windowHeight)\n  }\n}\n// function homePageText(data) {\n//   return dataSection(data.read('startup'))\n//     .split('%%')\n//     .find(function(text) {\n//       return text.indexOf('homePage') === 0\n//     })\n//     .replace(/^homePage\\n/, '')\n// }\n//\n// function downloadAGroveText(data) {\n//   return dataSection(data.read('startup'))\n//     .split('%%')\n//     .find(function(text) {\n//       return text.indexOf('downloadAGrove') === 0\n//     })\n//     .replace(/^downloadAGrove\\n/, '')\n// }\n\nvar homePageText = extractPageData('homePage')\nvar downloadAGroveText = extractPageData('downloadAGrove')\nvar learnMoreText = extractPageData('learnMore')\n\nfunction extractPageData(tag) {\n  var lineWithTag = new RegExp('^' + tag + '\\n')\n\n  return function(data) {\n    return dataSection(data.read('startup'))\n      .split('%%')\n      .find(function(text) {\n        return text.indexOf(tag) === 0\n      })\n      .replace(lineWithTag, '')\n  }\n}\n\n/*\n===== DATA BEGIN ===========================================\n%%homePage\n                     druidic.github.io\n\n\n      Welcome to the homepage of Druidic Technologies,\n   creators of the Grove--the world's first and squarest\n                   virtual home computer.\n\nThe Grove gives you a way to perform common computing tasks\nusing exactly the same interface on any system -- Mac OS,\nWindows, Linux, or Chromebook. It doesn't need an Internet\nconnection.\n\n  Use the number keys to select an option:\n\n  [1]: Download a Grove computer\n  [2]: Learn more about the Grove's design philosophy\n%%learnMore\n\n           Enter the Grove: Our Design Philosophy\n\n            Press [H] to return to the homepage.\n\nViewed against the backdrop of modern software and computer\ntechnology the Grove's minimalist, retro design seems incon-\ngruous. We think it makes sense, though, given the goals the\nGrove aims to accomplish. In this article, I'll outline the\ndesign decisions we made and explain the reasoning under-\nlying them.\n\nThe Grove's design goal is to minimize frustration. We\nbelieve that recent trends in computing have increased the\namount of frustration -- the gap between what you think you\nshould be able to do and what you actually can do -- that\npeople experience when using computers. By defying those\ntrends, we aim to provide a more reliable -- albeit less\nexciting -- computing experience.\n\nThe last decade has seen a Cambrian explosion of form\nfactors, screen sizes, and interaction paradigms. We now\nhave multitouch screens that fit in our pockets and voice-\nactivated personal-assistant devices. These innovations have\nexpanded the horizons of consumer technology and redefined\nour view of what a computer can be.\n\nAll of our wonderful new gadgetry comes at a cost, however.\nWhile the \"best-case scenario\" for a computer user in 2017\nis certainly better than it was in 2007, the worst case is\nprobably worse. We now have exploding smartphones and TV\nshows that cause Alexa to order products. We rely increas-\ningly on videoconferencing and cloud storage; we haven't\nfigured out a good plan B for when our audio mysteriously\ndoesn't work or the internet is down at the office. The\ncomplexity of our computer ecosystem produces complex\nfailures that are difficult to predict and compensate for.\n\nIn spite of the rapid development of computing technology,\nour basic needs as computer users have not significantly\nchanged for decades. We still need to create text documents,\nperform calculations, access information, and communicate.\nFor most of us, it's important that we be able to accomplish\nthese tasks reliably. We should not be stymied if our\nInternet connection fails, or our phone runs out of battery,\nor a company whose product we use goes out of business. Yet\nall of these events threaten daily to obstruct us. Twenty\nyears ago, they would have been non-issues: software that\ndidn't absolutely need a network connection wouldn't rely on\none; computers didn't usually rely on batteries for power;\nshrink-wrapped software meant that you could continue to use\nproducts that had been abandoned by their creators.\n\nThe common thread underlying these issues is dependency.\nSoftware fails because it makes assumptions about things\noutside itself -- things which are outside of the control of\nthe software's users and creators, and which therefore\ncannot be taken for granted. In order to be reliable,\nsoftware must make few assumptions. It should depend on as\nlittle as possible. Those things on which it does depend\nmust be reliable.\n\nThis is the core of the Grove's design philosophy: depend\nonly on reliable things. Have a backup plan, in case one\nof the \"reliable\" things fails. Adhering to these simple\nprinciples enables us to build super-reliable software.\n\nHere are some of the ways we put this principle into\npractice:\n\n  * Grove software does not need an Internet connection to\n    work. All your data is stored on your device, where you\n    can access it at any time.\n\n  * The Grove runs in a web browser because web browsers\n    work in more or less the same way across operating\n    systems. Since there are several organizations making\n    web browsers, the Grove's existence cannot be endangered\n    by the insolvency of any one of them.\n\n  * Because the Grove works exactly the same way on a wide\n    variety of computers, you can easily switch devices if\n    the one you're using runs out of batteries. When you\n    save your progress on a Grove, it takes a snapshot of\n    the entire system and downloads it as a file. You can\n    copy that file to any computer and pick up right where\n    you left off.\n\n  * Once installed, Grove software remains on the system.\n    Even if that software vanishes from the Internet, you\n    can continue to use it. Contrast this with a web service\n    like 750words.com -- a great site for journaling, but\n    who knows if it'll be around in ten years?\n\n  * The Grove's keyboard-only interface may be offputting to\n    some, but while pointer input devices run the gamut from\n    touchscreens to trackpads to mice, keyboards are\n    essentially the same on every platform. We've avoided\n    assigning meaning to keys like 'control' and 'command'\n    that aren't present on every computer. That means you\n    won't have to re-learn your muscle memory when you\n    switch computers.\n\nAnother common cause of software failures is simple\nprogrammer error -- in other words, bugs. This source of\nfailure has actually diminished over the last two decades\nwith the steady progress of programming languages that\nminimize opportunities for error.\n\nA few countervailing currents have worked to keep bugs\nalive, however. One is the complexity of modern user inter-\nfaces. Only in the last couple of years have we devised UI\nprogramming patterns that work well for large, complex\nsystems. Even with these patterns, the large variety of\ndevices and screen sizes that web UIs must support creates\ncomplexity and opportunities for bugs to sneak in.\n\nUser interfaces are problematic for another reason: because\nthey are inherently visual, rather than abstract and\nlogical, it is next to impossible to automate UI testing.\nFor many programming tasks, programmers can verify the basic\ncorrectness of their code by writing test procedures that\nfeed in various data and check that the correct results\ncome out. Automated testing of this kind has gained\nincreasing acceptance as an indispensable part of software\ndevelopment. However, it's not generally possible to write a\nprogram that tests that a UI looks good, so UI testing is\nstill performed by humans poking around the app and visually\ninspecting things.\n\nThe Grove's fixed-size, text-only UI changes all that. As if\nby magic, it's now possible to automate UI testing, because\nthe only thing the test program needs to check is what text\nis displayed on the screen. Because the UI looks the same on\nevery system, a single test verifies that that it will work\neverywhere. The UI is no longer a hiding place for bugs.\n\n            Press [H] to return to the homepage.\n%%downloadAGrove\nComing soon!\n\nPress [H] to return to the homepage.\n%%hidden\n\n            \"The number of transitors on a chip\n             (and thus, the power of computers)\n             doubles every eighteen months\"\n                                  --Moore's law\n\n            \"The speed of software halves every\n             eighteen months\"\n                                   --Gates' Law\n\nOur answer to this problem is to approach software with a\nmentality of sufficiency. In other words, we believe that\nsoftware with a limited feature set--software that \"just\nworks\" and isn't constantly changing for no reason--can\nadequately serve almost everyone's needs.\n\nThroughout our design and development cycle, we're\nconstantly asking ourselves: \"Do we really need this\nfeature? How can this be made simpler?\"\n\n------------------------------------------------------------\n\n\n\n------------------------------------------------------------\n\nOur product design is guided by a few key promises:\n\n* We'll never show you ads.\n\n* We'll never mine your data.\n\n* We'll never force you to upgrade.\n\n* If  you  do  choose to upgrade, we'll make it easy to go back.\nWe'll keep all releases of our software available forever, and\nlet you choose whatever version suits you best.\n\n* We want to make sure that our software runs on as many systems\nas possible. We support Mac OSX, Windows, and Linux  operating\nsystems, and Firefox, Chrome, Safari and Opera web browsers.\n\nIf you're technically inclined, you might also be interested  in\nour development practices:\n\n* We practice and encourage test-driven development. We think our app\nframework will help you write the most testable code you've\never worked on.\n\n* All our code is open-source and viewable on Github.\n\n* Our  code and third-party dependencies are licensed under non-\nparasitic open-source licenses, such as the  MIT  license  and\nthe WTFPL.\n\n* Our APIs are designed to support and  encourage  a  functional\nprogramming style, while allowing a hybrid of functional, pro-\ncedural, and OO approaches.\n\n1. Do no harm.\n2. Make no commitments you can't keep.\n3. Take commitments seriously.\n4.\n\n===== DATA END =================================================\n*/\nfunction dataSection(string) {\n  var parts = ('\\n' + string).split(/\\n===== DATA[^\\n]*\\n/)\n  if (parts.length === 1) return ''\n  if (parts.length !== 3) throw 'Could not parse data section'\n  return parts[1]\n}\nvar currentScreen = null\nvar state = {}\n\nfunction goToScreen(screen, records, updatedRecords) {\n  currentScreen = screen(state, records, updatedRecords)\n}\n\nfunction display(collated) {\n  if (typeof currentScreen.display === 'function') {\n    return currentScreen.display(collated)\n  } else {\n    return ('' + collated).split('\\n')\n  }\n}\n\nfunction collate() {\n  if (typeof currentScreen.collate === 'function') {\n    return currentScreen.collate()\n  } else {\n    return JSON.stringify(state, null, 2)\n  }\n}\n\nfunction main(event, records) {\n  var updatedRecords = {}\n\n  if (event.type === 'startup') {\n    goToScreen(Home, records, updatedRecords)\n  }\n\n  if (event.type === 'keyDown'\n      && typeof currentScreen.onKeyDown === 'function') {\n    currentScreen.onKeyDown(event, records, updatedRecords)\n  }\n\n  if (event.type === 'keyUp'\n      && typeof currentScreen.onKeyUp === 'function') {\n    currentScreen.onKeyUp(event, records, updatedRecords)\n  }\n\n  if (event.type === 'clock'\n      && typeof currentScreen.onClock === 'function') {\n    currentScreen.onClock(event, records, updatedRecords)\n  }\n\n  return {\n    screen: display(collate()),\n    records: updatedRecords\n  }\n}\nvar _32_BLANKS = [\n  '', '', '', '', '', '', '', '',\n  '', '', '', '', '', '', '', '',\n  '', '', '', '', '', '', '', '',\n  '', '', '', '', '', '', '', '',\n]\n\nfunction pageDisplay(windowHeight) {\n  return function(collated) {\n    var nLines = collated.lines.length\n    var fill = nLines < windowHeight - 2\n      ? _32_BLANKS.slice(0, windowHeight - 2 - nLines)\n      : []\n\n    return collated.lines\n      .map(function(line) {\n        return '  ' + line\n      })\n      .concat(fill)\n      .concat([\n        '────────────────────────────────'\n        + '────────────────────────────────',\n        '  Scroll with J and K  :  ' + collated.linesRemaining\n        + ' more lines'\n      ])\n  }\n}\n","doNotWarnAboutUnsavedChanges":"exists"}</script>
 
     <!-- this script gets run in a web worker -->
     <script type="dont-run-in-main-thread" id="grove-worker">
+var VERSION = '0.0 "Alder" dev'
 DataRecorder = function(entries, changeCallback) {
   var recorder = {}
   var changeCallback = changeCallback || function() {}
@@ -376,80 +384,32 @@ function ReadOnly(readable) {
 }
 /**
  * A LineBuffer object represents a single line of output
- * as displayed on the Grove's screen.
- *
- * As such, it is limited to a 64-character width. When
- * text is added to the LineBuffer, a style object may also
- * be given to colorize or add bold/italic/underline styling
- * to the added text.
+ * as displayed on the Grove's screen. It is limited to a
+ * 64-character width.
  *
  * The LineBuffer escapes HTML input, so untrusted text
  * may be passed in.
  */
-function LineBuffer(_text, _style) {
+function LineBuffer(_text) {
   // --- State variable declarations -----------------------
 
   var self
   var text
-  var perCharStyle = []
-  for (var i = 0; i < 64; i++) {
-    perCharStyle.push(Style(_style))
-  }
 
   // --- Initialization ------------------------------------
 
-  text = _64_SPACES; paste(_text)
+  text = makeScreenWidth(_text)
 
   // --- Public interface declaration ----------------------
 
   return self = {
-    toHTML: toHTML,
-    paste:  paste,
-    type:   LineBuffer.type
+    toHTML: toHTML
   }
 
   // --- Public method definitions -------------------------
 
   function toHTML() {
-    var perCharClasses = perCharStyle.map(function(s) {
-      return s.toHTMLClasses()
-    })
-
-    var classEdges = edges(perCharClasses)
-    segments = splitAtIndices(classEdges, makeScreenWidth(text))
-
-    var pos = 0
-    return segments.map(function(seg) {
-      var escaped = htmlEscape(seg)
-
-      var cls = perCharClasses[pos]
-      pos += seg.length
-
-      if (!cls) {
-        return escaped
-      } else {
-        return '<span class="' + cls + '">'
-          + escaped
-          + '</span>'
-      }
-    }).join('')
-  }
-
-  function paste(added, start, style) {
-    if (added === undefined) {
-      added = ''
-    }
-    start = start || 0
-    var end = start + added.length
-    text = text.slice(0, start)
-      + added
-      + text.slice(end)
-
-    for (var i = start; i < end && i < 64; i++) {
-      perCharStyle[i].overlay(style)
-    }
-
-    return self
+    return htmlEscape(text)
   }
 }
 
@@ -460,26 +420,11 @@ var _64_SPACES
   + '                                '
 
 function makeScreenWidth(s) {
+  s = typeof s === 'undefined'
+    ? ''
+    : '' + s
+
   return (s + _64_SPACES.slice(s.length)).slice(0, 64)
-}
-
-function edges(list) {
-  var output = []
-  for (var i = 1; i < list.length; i++) {
-    if (list[i] !== list[i - 1]) {
-      output.push(i)
-    }
-  }
-  return output
-}
-
-function splitAtIndices(indices, string) {
-  if (!indices.length) return [string]
-  var segments = []
-  for (var i = -1; i < indices.length; i++) {
-    segments.push(string.slice(+indices[i], indices[i+1]))
-  }
-  return segments
 }
 
 function htmlEscape(string) {
@@ -553,6 +498,7 @@ function Grove (
   var main = null
   var keysHeld = {}
   var permanentErrorOutput = null
+  var lastClockEvent = +new Date()
 
   // === Initialization ===================================
 
@@ -566,7 +512,7 @@ function Grove (
     printStartupJsNotFoundError()
   }
 
-  getGlobalObject().setTimeout(handleClock, 0)
+  getGlobalObject().setInterval(handleClock, 50)
 
   // === Public interface declaration =====================
 
@@ -604,18 +550,32 @@ function Grove (
   // === Private functions ================================
 
   function handleClock() {
+    var now = +new Date()
     runMainAndPrintOutput({
       type: 'clock',
-      time: +new Date()
+      time: now
     })
-    getGlobalObject()
-      .setTimeout(handleClock, timeUntilNextFrame(+new Date(), 20))
+    /* timeUntilNextFrame quantizes frames so that a frame
+     * always falls on the second boundary. This ensures
+     * that if JS code takes longer than a frame to run,
+     * frames will be dropped. If we didn't do this, the
+     *
+     * However, this creates an edge case. In Firefox,
+     * timeouts sometimes fire a couple milliseconds early.
+     * We add 25 ms to `now` here so that if the previous
+     * timeout fired e.g. 1ms early, the delay for the next
+     * timeout will be set to 51ms rather than 1ms.
+     */
+    // var halfwayToNextFrame = now + 25
+    // var delay = timeUntilNextFrame(halfwayToNextFrame, 20)
+    //
+    // getGlobalObject()
+    //   .setTimeout(handleClock, delay)
   }
 
   function runnableStartupScript (src) {
     var scriptText = '(function(){'
-      + 'var ' + Object.keys(getGlobalObject())
-        .filter(notWhitelistedGlobal).join(',')
+      + 'var ' + Object.keys(getGlobalObject()).join(',')
       + ';' + src
       + 'return main'
       + '})()'
@@ -633,7 +593,7 @@ function Grove (
     if (!main) return
 
     if (permanentErrorOutput) {
-      printLineBuffers(permanentErrorOutput)
+      printTrustedOutput(permanentErrorOutput)
       return
     }
 
@@ -643,12 +603,20 @@ function Grove (
     } catch(e) {
       var errorColors = {fg: 'black', bg: 'red', b: 1}
       output = permanentErrorOutput = [
-        LineBuffer('The system encountered an error:', errorColors),
-        LineBuffer(e.toString(), errorColors),
-        LineBuffer('', errorColors),
-        LineBuffer('Please take a screenshot and report this problem to', errorColors),
-        LineBuffer('the.wizard.ben@gmail.com', errorColors)
+        'The system encountered an error:',
+        e.toString(),
+        '',
+        'Please take a screenshot and report this problem to',
+        'the.wizard.ben@gmail.com'
       ]
+    }
+
+    /* The OS may return null from main() if no re-render
+     * needs to be performed. This can be used as a performance
+     * optimization since the OS can avoid recomputing the
+     * screen buffer. */
+    if (output === null) {
+      return
     }
 
     if (output === undefined) {
@@ -667,26 +635,43 @@ function Grove (
       output = [output]
     }
 
-    for (var i = 0; i < output.length; i++) {
-      if (output[i].type !== LineBuffer.type) {
-        output[i] = LineBuffer(output[i])
+    if (event.type === 'clock') {
+      var now = +new Date()
+      if (now - lastClockEvent < 50 && now % 50 < 96) {
+        console.log('' + now + ': Grove clock event early ' + (50 - (now - lastClockEvent)) + ' ms')
       }
+      lastClockEvent = now
     }
 
-    printLineBuffers(output)
+    printLineBuffers(output.map(LineBuffer))
   }
 
   function printErrorFromStartup (e) {
-    printTrustedOutput([
-      'An error occurred while starting up:',
-      htmlEscape(e.toString())
+    printLineBuffers([
+      LineBuffer('An error occurred while starting up:'),
+      LineBuffer(e.toString())
     ])
   }
 
   function printStartupJsNotFoundError () {
     printTrustedOutput([
-      "Can't start up because the \"startup\" record does not define a",
-      "main() function."
+      "Grove " + VERSION,
+      "",
+      "Welcome! This Grove has no operating system installed yet.",
+      // TODO: make Moss a real thing
+      // "To get up and running quickly, please download a Grove snapshot",
+      // "that includes an operating system. Snapshots are available at",
+      // "",
+      // "    https://github.com/druidic/moss/releases", {fg: 'white'},
+      // "",
+      "If you want to install or create a custom operating system,",
+      "please read the guide available at",
+      "",
+      "    https://druidic.github.io/grove/guide",
+      "",
+      "If you get stuck, feel free to contact support:",
+      "",
+      "    the.wizard.ben@gmail.com"
     ])
   }
 
@@ -705,10 +690,6 @@ function Grove (
       return self
     }
     return global
-  }
-
-  function notWhitelistedGlobal(varName) {
-    return varName !== 'LineBuffer'
   }
 
   function updateDataRecorder(newRecords) {
@@ -805,7 +786,7 @@ setTitleTo(getComputerName(dataRecords))
 // --- Event handler setup --------------------------------
 
 click($diskSlot, function() {
-  $recordsScript.innerText
+  $recordsScript.textContent
     = 'var RECORDS = ' + JSON.stringify(dataRecords)
 
   var pageData = document.documentElement.outerHTML
@@ -872,11 +853,21 @@ window.addEventListener('keyup', function(e) {
 })
 
 // --- Function definitions -------------------------------
-
+var lastClockEvent = +new Date()
 function handleMessageFromWorker(msg) {
   switch (msg.data.type) {
     case 'redraw':
-      redraw(msg.data.value)
+      var now = +new Date()
+      if (now - lastClockEvent > 50 && now % 50 > 4) {
+        console.log('' + now + ': main redraw delayed ' + (now - lastClockEvent - 50) + ' ms')
+      }
+      if (now - lastClockEvent < 50 && now % 50 < 96) {
+        console.log('' + now + ': main redraw early ' + (50 - (now - lastClockEvent)) + ' ms')
+      }
+      lastClockEvent = now
+      requestAnimationFrame(function() {
+        redraw(msg.data.value)
+      })
       break
     case 'dataRecordChange':
       dataRecords[msg.data.name] = msg.data.content
@@ -890,7 +881,7 @@ function GroveWorker(dataRecords, messageCallback) {
     'var RECORDS = ',
     JSON.stringify(dataRecords),
     ';',
-    $groveWorkerScript.innerText
+    $groveWorkerScript.textContent
   ])
 
   var worker = new Worker(URL.createObjectURL(scriptBlob))
@@ -903,7 +894,7 @@ function click(elem, callback) {
 }
 
 function setTitleTo(title) {
-  $title.innerText = title
+  $title.textContent = title
 }
 
 var previouslyDrawn = []
@@ -914,7 +905,6 @@ function redraw(text) {
       lineElements[i].innerHTML = text[i] || ''
       previouslyDrawn[i] = text[i]
     }
-
   }
 }
 
