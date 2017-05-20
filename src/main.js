@@ -1,5 +1,10 @@
-var currentScreen = null
-var state = {}
+var currentScreen
+var state
+function resetGlobals() {
+  currentScreen = null
+  state = {}
+}
+resetGlobals()
 
 function goToScreen(screen, records, updatedRecords) {
   currentScreen = screen(state, records, updatedRecords)
@@ -25,6 +30,9 @@ function main(event, records) {
   var updatedRecords = {}
 
   if (event.type === 'startup') {
+    updatedRecords['system/name'] = updatedRecords['name']
+      = 'Druidic Technologies'
+
     goToScreen(Home, records, updatedRecords)
   }
 
