@@ -6,8 +6,8 @@ function resetGlobals() {
 }
 resetGlobals()
 
-function goToScreen(screen, records, updatedRecords) {
-  currentScreen = screen(state, records, updatedRecords)
+function goToScreen(screen) {
+  currentScreen = screen(state)
 }
 
 function display(collated) {
@@ -27,32 +27,33 @@ function collate() {
 }
 
 function main(event, records) {
-  var updatedRecords = {}
+  state.updatedRecords = {}
+  state.records = records
+  state.urlToOpen = null
 
   if (event.type === 'startup') {
-    updatedRecords['system/name'] = updatedRecords['name']
-      = 'Druidic Technologies'
-
-    goToScreen(Home, records, updatedRecords)
+    state.updatedRecords['name'] = 'Druidic Technologies'
+    goToScreen(Home)
   }
 
   if (event.type === 'keyDown'
       && typeof currentScreen.onKeyDown === 'function') {
-    currentScreen.onKeyDown(event, records, updatedRecords)
+    currentScreen.onKeyDown(event)
   }
 
   if (event.type === 'keyUp'
       && typeof currentScreen.onKeyUp === 'function') {
-    currentScreen.onKeyUp(event, records, updatedRecords)
+    currentScreen.onKeyUp(event)
   }
 
   if (event.type === 'clock'
       && typeof currentScreen.onClock === 'function') {
-    currentScreen.onClock(event, records, updatedRecords)
+    currentScreen.onClock(event)
   }
 
   return {
     screen: display(collate()),
-    records: updatedRecords
+    records: state.updatedRecords,
+    url: state.urlToOpen
   }
 }

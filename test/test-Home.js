@@ -6,7 +6,7 @@ describe('Homepage', function() {
       }
     }
 
-    var home = Home({}, fakeRecords, {})
+    var home = Home({records: fakeRecords, updatedRecords: {}})
     expect(home.collate()).toEqual({
       lines: [ 'foo' ],
       linesRemaining: 0

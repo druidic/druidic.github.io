@@ -1,26 +1,44 @@
-function DownloadAGrove(state, records) {
-  var scroller = Scroller(downloadAGroveText(records), 30)
+function DownloadAGrove(state) {
+  var textLines = downloadAGroveText(state.records).split('\n')
+  var frames = 0
+
+  state.urlToOpen
+    = 'https://github.com/druidic/grove/releases'
 
   return {
     collate: collate,
-    display: pageDisplay(32),
+    display: lineDisplay,
     onKeyDown: onKeyDown,
-    onKeyUp: scroller.onKeyUp,
-    onClock: scroller.onClock
+    onClock: onClock
+  }
+
+  function getLines() {
+    return frames > 6
+      ? textLines
+      : loadingBar()
+  }
+
+  function loadingBar() {
+    var s = 'Loading...'
+    for (var i = 0; i < frames; i++) {
+      s += '........'
+    }
+    return [s]
   }
 
   function collate() {
     return {
-      lines: scroller.getLines(),
-      linesRemaining: scroller.getLinesRemaining()
+      lines: getLines()
     }
   }
 
-  function onKeyDown(event, records, updatedRecords) {
-    scroller.onKeyDown(event)
-
+  function onKeyDown(event) {
     if ('H'.charCodeAt(0) === event.key) {
-      goToScreen(Home, records, updatedRecords)
+      goToScreen(Home)
     }
+  }
+
+  function onClock(event) {
+    frames++
   }
 }

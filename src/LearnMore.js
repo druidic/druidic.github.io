@@ -1,5 +1,5 @@
-function LearnMore(state, records) {
-  var scroller = Scroller(learnMoreText(records), 30)
+function LearnMore(state) {
+  var scroller = Scroller(learnMoreText(state.records), 30)
 
   return {
     collate: collate,
@@ -16,11 +16,11 @@ function LearnMore(state, records) {
     }
   }
 
-  function onKeyDown(event, records, updatedRecords) {
+  function onKeyDown(event) {
     scroller.onKeyDown(event)
 
     if ('H'.charCodeAt(0) === event.key) {
-      goToScreen(Home, records, updatedRecords)
+      goToScreen(Home)
     }
   }
 }

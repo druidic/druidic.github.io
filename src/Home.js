@@ -1,10 +1,11 @@
-function Home(state, records, updatedRecords) {
+function Home(state) {
   if (!state.launched) {
     state.launched = true
-    updatedRecords.doNotWarnAboutUnsavedChanges = 'exists'
+    state.updatedRecords.doNotWarnAboutUnsavedChanges
+      = 'exists'
   }
 
-  var scroller = Scroller(homePageText(records), 30)
+  var scroller = Scroller(homePageText(state.records), 30)
 
   return {
     collate: collate,
@@ -21,15 +22,15 @@ function Home(state, records, updatedRecords) {
     }
   }
 
-  function onKeyDown(event, records, updatedRecords) {
+  function onKeyDown(event) {
     scroller.onKeyDown(event)
 
     if ('1'.charCodeAt(0) === event.key) {
-      goToScreen(DownloadAGrove, records, updatedRecords)
+      goToScreen(DownloadAGrove)
     }
 
     if ('2'.charCodeAt(0) === event.key) {
-      goToScreen(LearnMore, records, updatedRecords)
+      goToScreen(LearnMore)
     }
   }
 }

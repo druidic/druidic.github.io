@@ -1,21 +1,3 @@
-// function homePageText(data) {
-//   return dataSection(data.read('startup'))
-//     .split('%%')
-//     .find(function(text) {
-//       return text.indexOf('homePage') === 0
-//     })
-//     .replace(/^homePage\n/, '')
-// }
-//
-// function downloadAGroveText(data) {
-//   return dataSection(data.read('startup'))
-//     .split('%%')
-//     .find(function(text) {
-//       return text.indexOf('downloadAGrove') === 0
-//     })
-//     .replace(/^downloadAGrove\n/, '')
-// }
-
 var homePageText = extractPageData('homePage')
 var downloadAGroveText = extractPageData('downloadAGrove')
 var learnMoreText = extractPageData('learnMore')
@@ -50,7 +32,7 @@ connection.
 
   Use the number keys to select an option:
 
-  [1]: Download a Grove computer
+  [1]: Download a Grove computer (opens in a new window)
   [2]: Learn more about the Grove's design philosophy
 %%learnMore
 
@@ -192,7 +174,8 @@ everywhere. The UI is no longer a hiding place for bugs.
 
             Press [H] to return to the homepage.
 %%downloadAGrove
-Coming soon!
+The download page should have just opened in a new browser
+tab. If it didn't work, try enabling pop-ups for this site.
 
 Press [H] to return to the homepage.
 %%hidden
