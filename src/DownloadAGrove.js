@@ -3,7 +3,7 @@ function DownloadAGrove(state) {
   var frames = 0
 
   state.urlToOpen
-    = 'https://github.com/druidic/grove/releases'
+    = 'https://github.com/druidic/grove/releases/download/v0.5/grove.html'
 
   return {
     collate: collate,

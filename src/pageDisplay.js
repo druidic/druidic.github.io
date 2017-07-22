@@ -12,16 +12,21 @@ function pageDisplay(windowHeight) {
       ? _32_BLANKS.slice(0, windowHeight - 2 - nLines)
       : []
 
-    return collated.lines
+    var output = collated.lines
       .map(function(line) {
         return '  ' + line
       })
       .concat(fill)
-      .concat([
+
+    if (nLines >= windowHeight - 2) {
+      output = output.concat([
         '────────────────────────────────'
         + '────────────────────────────────',
         '  Scroll with J and K  :  ' + collated.linesRemaining
         + ' more lines'
       ])
+    }
+
+    return output
   }
 }

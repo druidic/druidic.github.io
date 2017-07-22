@@ -20,20 +20,25 @@ function extractPageData(tag) {
 %%homePage
                      druidic.github.io
 
+1. Introduction
 
-      Welcome to the homepage of Druidic Technologies,
-   creators of the Grove--the world's first and squarest
-                   virtual home computer.
+    Welcome to the homepage of Druidic Technologies,
+    creators of the Grove--the world's first and squarest
+    virtual home computer.
 
-The Grove gives you a way to perform common computing tasks
-using exactly the same interface on any system -- Mac OS,
-Windows, Linux, or Chromebook. It doesn't need an Internet
-connection.
+    The Grove gives you a way to perform common computing
+    tasks using exactly the same interface on any system --
+    Mac OS, Windows, Linux, or Chromebook. It doesn't need
+    an Internet connection.
 
-  Use the number keys to select an option:
+2. Links
 
-  [1]: Download a Grove computer (opens in a new window)
-  [2]: Learn more about the Grove's design philosophy
+    Use the number keys to select an option:
+
+    [1]:  Download a Grove computer (opens in a new window)
+
+    [2]:  Learn more about the Grove's design philosophy
+
 %%learnMore
 
            Enter the Grove: Our Design Philosophy
@@ -174,10 +179,23 @@ everywhere. The UI is no longer a hiding place for bugs.
 
             Press [H] to return to the homepage.
 %%downloadAGrove
-The download page should have just opened in a new browser
-tab. If it didn't work, try enabling pop-ups for this site.
+1. Information
 
-Press [H] to return to the homepage.
+    Download started.
+
+    You should see a file in your Downloads folder called
+    "grove.html".
+
+2. Links
+
+    Press [H] to return to the homepage.
+
+3. Troubleshooting
+
+    If the download didn't work, try enabling pop-ups for
+    this site, and then press [H] [1] to return to the
+    homepage and retry the download.
+
 %%hidden
 
             "The number of transitors on a chip

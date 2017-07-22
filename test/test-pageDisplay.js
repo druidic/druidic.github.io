@@ -7,9 +7,9 @@ describe('pageDisplay', function() {
   })
 
   it('displays the number of lines remaining at the bottom of the screen', function() {
-    expect(pageDisplay(10)({
+    expect(pageDisplay(3)({
       lines: ['foo'],
       linesRemaining: 0
-    })[9]).toBe('  Scroll with J and K  :  0 more lines')
+    })[2]).toBe('  Scroll with J and K  :  0 more lines')
   })
 })

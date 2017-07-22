@@ -24,6 +24,6 @@ describe('main', function() {
     main({type: 'startup'}, records)
     var output = main({type: 'keyDown', key: 49}, records)
 
-    expect(output.url).toEqual('https://github.com/druidic/grove/releases')
+    expect(output.url).toEqual('https://github.com/druidic/grove/releases/download/v0.5/grove.html')
   })
 })
