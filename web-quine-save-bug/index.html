@@ -231,7 +231,7 @@ WebQuine.__state__ = null
   <body>
 <p>Web Quine Demo Project</p>
 
-<div id="root">Javascript doesn't seem to be supported here</div>
+<div id="root"></div>
     <script type="text/javascript">
 app({
   root: document.getElementById('root'),
@@ -251,7 +251,7 @@ app({
       // loading the app from a save file, ensuring that the
       // view the user sees is always computed from the
       // latest state.
-      document.getElementById('root').innerHTML = ''
+      // document.getElementById('root').innerHTML = ''
     }
   }
 })
