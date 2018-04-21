@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><title>Verse</title><link rel="manifest" href="/manifest.json"><link rel="shortcut icon" href="/favicon.ico"><script>function App(global) {
-      const {
+      let {
         viewTestResults,
         getStateType,
         reducer,
@@ -8,6 +8,8 @@
       } = global
 
       if (!view) throw 'You must define a view() function at the top level'
+      if (!getStateType) getStateType = () => ({})
+      if (!init) init = function*() {}
 
       let results = runTests(getTestFunctions(global))
       if (results.failures.length) {
@@ -144,6 +146,7 @@
       }
 
       function pop() {
+        updateScreen()
         let saga = stack.pop()
         saga.timers.forEach(clearInterval)
         return saga
@@ -187,15 +190,6 @@
     function waitForChar() {
       return {
         effectType: 'waitForChar'
-      }
-    }
-
-    function waitForInput() {
-      return function*(tell) {
-        let result = '', a
-        while((a = yield waitForChar()) !== 'Enter')
-          result += a
-        return result
       }
     }
 
@@ -425,20 +419,4 @@
 
     function isNullOr(type) {
       return a => a === null || satisfies(type, a)
-    }</script><script>function define(definitions) {
-  for (let name in definitions) {
-    if (has(name, definitions)) {
-      window[name] = definitions[name]
-    }
-  }
-}
-
-define({
-  *init() {
-    yield log('No program is currently loaded')
-  },
-
-  getStateType() {
-    return {}
-  }
-})</script><link href="/static/css/main.7e719c71.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/static/js/main.3107ae86.js"></script></body></html>
+    }</script><link href="/static/css/main.4621f42e.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="/static/js/main.8fe588c6.js"></script></body></html>
